@@ -1,0 +1,29 @@
+--2.4. Найти углы треугольника, еcли они пропорциональны заданным числам A, B, C.
+
+summa a b c = if (a + b + c) > 0
+    then a + b + c
+    else 0
+
+angle1 a b c = if a > 0
+    then a * (180 / (summa a b c))
+    else 0
+
+angle2 a b c = if b > 0
+    then b * (180 / (summa a b c))
+    else 0
+
+angle3 a b c = if c > 0
+    then c * (180 / (summa a b c))
+    else 0
+
+main :: IO()
+main = do
+    let a = 11
+    let b = 12
+    let c = 10
+    putStrLn "angle A:"
+    print(angle1 a b c)
+    putStrLn "angle B:"
+    print(angle2 a b c)
+    putStrLn "angle C:"
+    print(angle3 a b c)
