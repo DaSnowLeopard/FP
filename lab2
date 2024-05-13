@@ -1,0 +1,13 @@
+-- 2.12.Функция, которая меняет знак всех положительных элементов списка чисел,
+например: по [-1, 0, 5, -10, -20] дает [-1,0,-5,-10,-20].
+
+transform :: [Int] -> [Int]
+transform [] = []
+transform (s:sn) = if s > 0
+    then -s: transform sn
+    else s : transform sn
+
+main = do
+    let list = [-2, 0, 456, 2, -56, -9, 32]
+    print(list)
+    print(transform list)
